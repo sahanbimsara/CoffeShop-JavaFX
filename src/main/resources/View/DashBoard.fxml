@@ -1,0 +1,142 @@
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.DashBoardController"
+            prefHeight="650.0"
+            prefWidth="1000.0"
+            style="-fx-background-color: #F7F2EC;">
+
+    <left>
+        <VBox prefWidth="220.0"
+              spacing="15.0"
+              style="-fx-background-color: #3B2419; -fx-padding: 25;">
+
+            <children>
+                <Label text="CoffeeShop"
+                       style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+
+                <Separator />
+
+                <Button text="Dashboard"
+                        onAction="#btnDashboard"
+                        maxWidth="Infinity" />
+
+                <Button text="Products"
+                        onAction="#btnProducts"
+                        maxWidth="Infinity" />
+
+                <Button text="Orders"
+                        onAction="#btnOrders"
+                        maxWidth="Infinity" />
+
+                <Button text="Customers"
+                        onAction="#btnCustomers"
+                        maxWidth="Infinity" />
+
+                <Button text="Reports"
+                        onAction="#btnReports"
+                        maxWidth="Infinity" />
+
+                <Button text="Logout"
+                        onAction="#btnLogout"
+                        maxWidth="Infinity" />
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox spacing="25.0"
+              style="-fx-padding: 35;">
+
+            <children>
+                <Label text="Dashboard"
+                       style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #3B2419;" />
+
+                <Label text="Welcome to CoffeeShop Management System"
+                       style="-fx-font-size: 16px; -fx-text-fill: #806F61;" />
+
+                <GridPane hgap="20.0" vgap="20.0">
+
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50.0" />
+                        <ColumnConstraints percentWidth="50.0" />
+                    </columnConstraints>
+
+                    <children>
+                        <VBox GridPane.columnIndex="0"
+                              GridPane.rowIndex="0"
+                              spacing="10.0"
+                              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+                            <children>
+                                <Label text="Total Products" />
+                                <Label fx:id="lblProducts"
+                                       text="0"
+                                       style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+
+                        <VBox GridPane.columnIndex="1"
+                              GridPane.rowIndex="0"
+                              spacing="10.0"
+                              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+                            <children>
+                                <Label text="Total Orders" />
+                                <Label fx:id="lblOrders"
+                                       text="0"
+                                       style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+
+                        <VBox GridPane.columnIndex="0"
+                              GridPane.rowIndex="1"
+                              spacing="10.0"
+                              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+                            <children>
+                                <Label text="Today's Sales" />
+                                <Label fx:id="lblSales"
+                                       text="Rs. 0.00"
+                                       style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+
+                        <VBox GridPane.columnIndex="1"
+                              GridPane.rowIndex="1"
+                              spacing="10.0"
+                              style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+                            <children>
+                                <Label text="Total Customers" />
+                                <Label fx:id="lblCustomers"
+                                       text="0"
+                                       style="-fx-font-size: 26px; -fx-font-weight: bold;" />
+                            </children>
+                        </VBox>
+                    </children>
+                </GridPane>
+
+                <VBox spacing="10.0"
+                      style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 12;">
+
+                    <children>
+                        <Label text="Coffee Shop Overview"
+                               style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+                        <Label fx:id="lblMessage"
+                               text="Manage your coffee shop operations here." />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
