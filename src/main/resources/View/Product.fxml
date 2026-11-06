@@ -1,0 +1,101 @@
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.ProductController"
+            prefWidth="1100"
+            prefHeight="650"
+            style="-fx-background-color: #F7F2EC;">
+
+    <top>
+        <HBox alignment="CENTER_LEFT"
+              style="-fx-background-color: #3B2419; -fx-padding: 20;">
+            <Label text="CoffeeShop | Product Management"
+                   style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;"/>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="25" style="-fx-padding: 25;">
+
+            <!-- Product Form -->
+            <VBox spacing="15" prefWidth="320"
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10;">
+
+                <Label text="Product Details"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #3B2419;"/>
+
+                <Label text="Product ID"/>
+                <TextField fx:id="txtProductId"
+                           promptText="Product ID"/>
+
+                <Label text="Product Name"/>
+                <TextField fx:id="txtProductName"
+                           promptText="Enter Product Name"/>
+
+                <Label text="Category"/>
+                <ComboBox fx:id="cmbCategory"
+                          promptText="Select Category"
+                          maxWidth="Infinity"/>
+
+                <Label text="Price (Rs.)"/>
+                <TextField fx:id="txtPrice"
+                           promptText="Enter Price"/>
+
+                <Label text="Stock Quantity"/>
+                <TextField fx:id="txtQuantity"
+                           promptText="Enter Quantity"/>
+
+                <HBox spacing="10">
+                    <Button text="Add"
+                            onAction="#btnAdd"
+                            prefWidth="70"/>
+                    <Button text="Update"
+                            onAction="#btnUpdate"
+                            prefWidth="70"/>
+                    <Button text="Delete"
+                            onAction="#btnDelete"
+                            prefWidth="70"/>
+                    <Button text="Clear"
+                            onAction="#btnClear"
+                            prefWidth="70"/>
+                </HBox>
+
+                <Button text="Back to Dashboard"
+                        onAction="#btnBack"
+                        maxWidth="Infinity"/>
+            </VBox>
+
+            <!-- Product Table -->
+            <VBox spacing="15" HBox.hgrow="ALWAYS">
+
+                <Label text="Product List"
+                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #3B2419;"/>
+
+                <TextField fx:id="txtSearch"
+                           promptText="Search Products..."
+                           onKeyReleased="#searchProducts"/>
+
+                <TableView fx:id="tblProducts"
+                           VBox.vgrow="ALWAYS">
+
+                    <columns>
+                        <TableColumn fx:id="colId"
+                                     text="ID" prefWidth="65"/>
+                        <TableColumn fx:id="colName"
+                                     text="Product Name" prefWidth="160"/>
+                        <TableColumn fx:id="colCategory"
+                                     text="Category" prefWidth="120"/>
+                        <TableColumn fx:id="colPrice"
+                                     text="Price" prefWidth="100"/>
+                        <TableColumn fx:id="colQuantity"
+                                     text="Stock" prefWidth="85"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

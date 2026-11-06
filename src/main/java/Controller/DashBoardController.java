@@ -45,10 +45,25 @@ public class DashBoardController {
         lblMessage.setText("Welcome to your dashboard!");
     }
 
+
     @FXML
     private void btnProducts(ActionEvent event) {
-        showMessage("Product Management");
+        try {
+            Parent root = FXMLLoader.load(
+                    getClass().getResource("/View/Product.fxml")
+            );
+
+            Stage stage = (Stage) ((Node) event.getSource())
+                    .getScene().getWindow();
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("CoffeeShop - Products");
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
 
     @FXML
     private void btnOrders(ActionEvent event) {
